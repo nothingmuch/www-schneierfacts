@@ -71,7 +71,7 @@ sub _build_link {
 }
 
 has author => (
-	isa => "Str",
+	isa => "Maybe[Str]",
 	is  => "rw",
 	lazy_build => 1,
 );
