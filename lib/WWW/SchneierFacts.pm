@@ -177,6 +177,14 @@ WWW::SchneierFacts - API for retrieving facts about Bruce Schneier
 
 	use WWW::SchneierFacts;
 
+	my $db = WWW::SchneierFacts->new;
+
+	foreach my $fact ( $db->top_facts ) {
+		print "$fact\n",
+		      ( $fact->author ? ( "  --", $fact->author, "\n" ) : () ),
+		      "\n";
+	}
+
 =head1 DESCRIPTION
 
 Bruce Schneier is the Chuck Norris of cryptography.
