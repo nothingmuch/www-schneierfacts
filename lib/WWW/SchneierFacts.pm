@@ -31,6 +31,12 @@ has random_fact_uri => (
 	default => sub { URI->new("http://geekz.co.uk/schneierfacts/") },
 );
 
+has latest_fact_uri => (
+	isa => "URI",
+	is  => "rw",
+	default => sub { URI->new("http://geekz.co.uk/schneierfacts/fact/latest") },
+);
+
 has fact_base_uri => (
 	isa => "URI",
 	is  => "rw",
@@ -59,6 +65,11 @@ sub top_facts {
 sub random_fact {
 	my $self = shift;
 	$self->new_fact(%{ $self->scrape( fact => $self->random_fact_uri ) });
+}
+
+sub latest_fact {
+	my $self = shift;
+	$self->new_fact(%{ $self->scrape( fact => $self->latest_fact_uri ) });
 }
 
 sub scrape {
