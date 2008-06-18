@@ -11,6 +11,8 @@ use WWW::SchneierFacts::Fact;
 
 use namespace::clean -except => [qw(meta)];
 
+our $VERSION = "0.01";
+
 has cache => (
 	isa => "HashRef[WWW::SchneierFacts::Fact]",
 	is  => "rw",
