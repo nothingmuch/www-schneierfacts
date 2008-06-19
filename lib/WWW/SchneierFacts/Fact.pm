@@ -143,7 +143,7 @@ The fact text.
 One of these is required. This is either the numeric ID or the link to the
 fact.
 
-To get a random fact, use L<WWW::SchneierFacts::Fact>.
+To get a random fact, use L<WWW::SchneierFacts/random_fact>.
 
 =item author
 
